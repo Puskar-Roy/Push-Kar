@@ -1,4 +1,3 @@
-const { app }= require('../src/index');
+const app = require('../src/index');
 
-
-module.exports = {app};  
+module.exports = app;  
