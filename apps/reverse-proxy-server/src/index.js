@@ -14,7 +14,7 @@ app.use((req, res) => {
     const hostname = req.hostname;
     const subdomain = hostname.split('.')[0];
 
-    // Custom Domain - DB Query
+    
 
     const resolvesTo = `${BASE_PATH}/${subdomain}`
 
@@ -30,3 +30,5 @@ proxy.on('proxyReq', (proxyReq, req, res) => {
 })
 
 app.listen(PORT, () => console.log(`Reverse Proxy Running..${PORT}`))
+
+module.exports = {app};    
