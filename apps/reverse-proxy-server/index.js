@@ -1,10 +1,11 @@
 const express = require('express')
 const httpProxy = require('http-proxy')
+require('dotenv').config();
 
 const app = express()
 const PORT = 8000
 
-const BASE_PATH = 'https://push-kar.s3.ap-south-1.amazonaws.com/__outputs'
+const BASE_PATH = process.env.BASE;
 
 
 const proxy = httpProxy.createProxy()
