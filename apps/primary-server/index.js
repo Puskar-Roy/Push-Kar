@@ -57,8 +57,12 @@ app.post('/project', async (req, res) => {
 
 
     });
-    await ecsClient.send(command);
 
+    try{
+    await ecsClient.send(command);
+    } catch(e){
+        return res.json({ status: 'failed', data: { error: e } })
+    }    
     return res.json({ status: 'queued', data: { projectSlug, url: `http://${projectSlug}.push-kar.vercel.app` } })
 
 })
